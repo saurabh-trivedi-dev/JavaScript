@@ -26,9 +26,10 @@ console.log(totalSalary);
 
 
 const incSalary = employees.map((employee)=>{
-    employee["salary"] = (employee["salary"] + ((10/100)*employee["salary"]));
-    return employee;
+    return{
+        ...employee,
+        salary: (employee.salary*1.10)
+    };
 });
 console.log(incSalary);
-
 console.log(employees);
