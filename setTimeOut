@@ -1,0 +1,56 @@
+// console.log("Start");
+
+// setTimeout(() => {
+//     console.log("Inside Timeout");
+// }, 0);
+
+// console.log("End");
+
+
+
+// console.log("1");
+
+// setTimeout(() => {
+//     console.log("2");
+// }, 1000);
+
+// setTimeout(() => {
+//     console.log("3");
+// }, 0);
+
+// console.log("4");
+
+
+
+// console.log("A");
+
+// setTimeout(() => {
+//     console.log("First 0ms");
+// }, 0);
+
+// setTimeout(() => {
+//     console.log("Second 0ms");
+// }, 0);
+
+// for (let i = 0; i < 10; i++) {
+//     console.log("In Loop");
+// }
+
+// console.log("C");
+
+
+
+
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timer 1");
+}, 0);
+
+console.log("Middle");
+
+setTimeout(() => {
+    console.log("Timer 2");
+}, 0);
+
+console.log("End");
