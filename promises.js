@@ -44,9 +44,13 @@ promise3
 
 
 const promise4 = new Promise((resolve, reject) => {
+
     console.log("Inside Promise");
+
     resolve("Done");
+
     console.log("After Resolve");
+
 });
 
 console.log("Outside Promise");
