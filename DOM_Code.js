@@ -54,3 +54,81 @@ remove.addEventListener("click", ()=>{
         lastelem.remove()
     }
 })
+
+
+
+//Event Bubbling
+const outer = document.querySelector("#outer")
+const middle = document.querySelector("#middle")
+const inner = document.querySelector("#inner")
+
+outer.addEventListener("click", () => {
+    console.log("Outer");
+});
+
+middle.addEventListener("click", (event) => {
+    console.log("Middle");
+});
+
+inner.addEventListener("click", (event) => {
+    event.stopPropagation();
+    console.log("Button");
+});
+
+
+
+//Event Delegation(1 Event Listener, 1000 Items)
+const list = document.querySelector("#list")
+
+list.addEventListener("click", (event)=>{
+    console.log(event.target.textContent);
+})
+
+const li = document.createElement("li");
+li.textContent = "Apple";
+list.appendChild(li);
+
+
+//Forms
+const username = document.querySelector("#username")
+const inputForm = document.querySelector("#inputForm")
+
+inputForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
+    const name = username.value.trim()
+    if(name){
+        console.log(name)
+    }
+    else{
+        console.log("Error :: Enter the username")
+    }
+    username.value=""
+    username.focus()
+})
+
+
+//Mini To-Do
+const inputForm = document.querySelector("#inputForm")
+const list = document.querySelector("#list")
+const name = document.querySelector("#name")
+
+inputForm.addEventListener("submit", (e)=>{
+    e.preventDefault()
+
+    const liName = name.value.trim()
+
+    if(liName){
+        const liItem = document.createElement("li")
+        liItem.textContent = liName
+        list.appendChild(liItem)
+    }
+
+    name.value = ""
+    name.focus()
+})
+
+list.addEventListener("click", (e) => {
+    if(e.target.tagName === "LI"){
+        e.target.remove();
+    }
+});
