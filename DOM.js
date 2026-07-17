@@ -1,23 +1,7 @@
-const heading = document.querySelector("#heading")
-const toggle = document.querySelector("#toggle");
-const body = document.querySelector("body");
-let isDark = false;
+const box = document.querySelector("#box");
 
-toggle.addEventListener("click", ()=>{
-
-    isDark = !isDark;
-
-    if(isDark){
-        body.style.backgroundColor = "black";
-        heading.style.color = "white";
-        toggle.textContent = "Light Mode!"
-    }
-
-    else{
-        body.style.backgroundColor = "white";
-        heading.style.color = "black";
-        toggle.textContent = "Dark Mode!"
-    }
-
+box.addEventListener("click", (event) => {
+    console.log("target:", event.target);
+    console.log("currentTarget:", event.currentTarget);
 });
 
