@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title> 
-    <style>
-
-    </style>
+    <title>Todo Pro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    
-    <script src="DOM.js"></script>
+
+<div class="container">
+
+    <h1>📝 Todo Pro</h1>
+    <p class="subtitle">Stay organized. Stay productive.</p>
+
+    <form id="inputForm" class="todo-form">
+        <input
+            type="text"
+            id="name"
+            placeholder="What needs to be done?"
+        >
+        <button type="submit">Add</button>
+    </form>
+
+    <div class="toolbar">
+
+        <div class="filters">
+            <button id="all">All</button>
+            <button id="active">Active</button>
+            <button id="completed">Completed</button>
+        </div>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Search tasks..."
+        >
+
+    </div>
+
+    <ul id="list"></ul>
+
+</div>
+
+<script src="DOM.js"></script>
+
 </body>
 </html>
