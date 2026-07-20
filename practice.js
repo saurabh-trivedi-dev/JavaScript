@@ -70,3 +70,78 @@ console.log(answer5)
 
 
 
+
+
+// Why do we need Promises?
+// Imagine you're downloading user data from a server.
+// It takes 2 seconds.
+// Without Promises, JavaScript would have to stop everything.
+// Instead, JavaScript says:
+// "Start the request. I'll continue executing other code. Tell me when it's finished."
+// That's what Promises help manage.
+
+// A Promise has 3 states
+// Pending
+//    │
+//    ├──► Fulfilled (Success) Resolve
+//    │
+//    └──► Rejected (Failure)  Reject
+
+
+const promise = new Promise((resolve, reject)=>{
+    resolve("Success")
+    reject("Failed")
+})
+// then() runs only if the promise is fulfilled
+// catch() runs only if the promise is rejected
+promise
+.then((res)=>{
+    console.log(res)
+})
+.catch((error)=>{
+    console.log(error)
+})
+
+
+
+
+
+function fetchData(){
+    return Promise.resolve("Success From fetchData")
+}
+
+//await can only be used inside an async function.
+async function getData(){
+    const data = await fetchData()
+    console.log(data)
+}
+
+getData()
+
+
+
+async function getData2(){
+    try{
+        const data = await fetchData()
+        console.log(data)
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
+getData2()
+
+
+
+
+// async	Makes a function return a Promise
+// await	Waits for a Promise to settle
+
+
+async function demo() {
+    return 10;
+}
+console.log(demo());     // Promise { 10 }
+
+
